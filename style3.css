@@ -1,0 +1,156 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #fdf3e7; 
+    overflow-x: hidden; /* 横スクロールを防止 */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+  }
+  #loading {
+    transition: all 1s; /*ローディングにかかる時間*/
+    background-color: #ffffff;
+    z-index: 999;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .loading-text {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .spin {
+    width: 64px;
+    height: auto;
+  }
+  
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #btn-open,
+  #btn-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background: #333;
+    color: #FFF;
+    font-size: 3em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  #btn-close {
+    z-index: 300;
+  }
+  
+  #menu {
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+  }
+  #menu ul {
+    list-style: none;
+    padding: 1rem 0;
+  }
+  
+  #menu li {
+    text-align: center;
+    padding: 1rem 0;
+    opacity: 0;
+  }
+  
+  #menu a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color .5s;
+  }
+  
+  #menu a:hover {
+    color: #666;
+  }
+
+  .header {
+    position: relative; /* テキストを画像上に重ねるために必要 */
+    width: 100%;
+    height: 300px; /* ヘッダーの高さを指定 */
+    overflow: hidden; /* 必要に応じて余分な部分を隠す */
+  }
+  
+  /* 背景画像 */
+  .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像をコンテナにフィットさせる */
+  }
+  
+  /* テキストエリア */
+  .header-text {
+    position: absolute; /* 画像の上に配置する */
+    top: 50%; /* 縦方向中央に配置 */
+    left: 50%; /* 横方向中央に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央揃えにする */
+    text-align: center;
+    color: white; /* テキストを白に設定 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* テキストに影をつける */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header-text h1 {
+    font-size: 2.5em; /* タイトルサイズ */
+    margin: 0;
+  }
+  
+  /* コンテンツの最大幅設定 */
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* ヘッダーやタイトルがはみ出さないように調整 */
+  h1, h2, p {
+    word-wrap: break-word; /* 長い単語を折り返し */
+    margin: 0 auto;
+    padding: 0 10px; /* スマホで適切な余白 */
+  }
+  
+  /* メディアクエリでスマホに対応 */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8em; /* タイトルの文字サイズを小さくする */
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: 1em;
+      padding: 0 5px; /* 横の余白を減らす */
+    }
+  }
+   /* フッター */
+   footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+  }
+  

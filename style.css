@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* ベーススタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif; /* 柔らかい印象のフォント */
+    background: #fdf3e7; /* ベージュ系の背景色 */
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #492e31;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  #loading {
+    transition: all 1s; /*ローディングにかかる時間*/
+    background-color: #ffffff;
+    z-index: 999;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .loading-text {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .spin {
+    width: 64px;
+    height: auto;
+  }
+  
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #btn-open,
+  #btn-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background: #333;
+    color: #FFF;
+    font-size: 3em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  #btn-close {
+    z-index: 300;
+  }
+  
+  #menu {
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  #menu ul {
+    list-style: none;
+    padding: 1rem 0;
+  }
+  
+  #menu li {
+    text-align: center;
+    padding: 1rem 0;
+    opacity: 0;
+  }
+  
+  #menu a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color .5s;
+  }
+  
+  #menu a:hover {
+    color: #666;
+  }
+  /* ヘッダーセクション */
+  .header {
+    background-image: url('images/main.PNG');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    position: relative;
+    top: 20px;
+    z-index: 10;
+  }
+  
+  .header-content {
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    position: relative;
+    top: -150px;
+    z-index: 10;
+  }
+  
+  .header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .header p {
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0066cc;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #005bb5;
+  }
+  .slide-in {
+    opacity: 0;
+    transform: translateX(-50px); /* 初期状態：左側に位置 */
+  }
+  
+  /* 花の装飾 */
+  .flower-left {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    width: 400px; /* サイズ調整 */
+  }
+  
+  .flower-right {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    width: 400px; /* サイズ調整 */
+  }
+  @media screen and (max-width: 768px) {
+    .flower-left,
+    .flower-right {
+      width: 250px; /* サイズを小さくする */
+    }
+  }
+  
+  /* フッター */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+  }
